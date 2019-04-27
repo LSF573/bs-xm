@@ -13,14 +13,15 @@
         <router-link to="/login">
           <button class="gologin">去登录</button>
         </router-link>
-        
       </div>
     </div>
     <div class="my_message">
       <div class="order">
         <div class="order_top">
           <span>我的订单</span>
-          <span>查看全部订单 ></span>
+          <router-link to='/order'>
+            <span class="">查看全部订单 ></span>
+          </router-link>
         </div>
         <div class="state">
           <div>
@@ -40,7 +41,10 @@
       <div class="order">
         <div class="order_top">
           <span>我的发布</span>
-          <span>查看详情 ></span>
+          <router-link to='/issue'>
+            <span>查看详情 ></span>
+          </router-link>
+          
         </div>
         <div class="state">
           <div>
@@ -72,7 +76,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .wite{
   font-size: 16px;
 }
@@ -121,6 +125,10 @@ export default {
   font-size:18px;
   padding: 16px 0;
   border-bottom: 1px solid #E6E6E6;
+}
+a{
+  color:#ACA7A4;
+  text-decoration: none;
 }
 .state{
   display: flex;

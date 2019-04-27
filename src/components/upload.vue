@@ -69,7 +69,6 @@ export default {
   width:50px;
   height:50px;
   margin:30px auto 20px;
-  padding-top:3px;
   box-sizing: border-box;
   background-color: #30A6ED;
   color:#fff;

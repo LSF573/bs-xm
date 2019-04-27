@@ -6,41 +6,54 @@
       </router-link>
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
-      <div class="tabs">
-        <template v-for="(item,index) in titleTab" item='item'>
-          <div class="tab_box">
-            <p>{{item}}</p>
-          </div>
-          
-        </template>
-        
-      </div>
+    <topTab :titleTab="titleTab"></topTab>
+    <div class="zw"></div>
+    <productList :array='array'></productList>
   </div>
 </template>
 
 <script>
+import productList from '@/components/index/productList'
+import topTab from '@/components/index/topTab'
 export default {
   data(){
     return{
-      titleTab:["全部","休闲美食","居家百货","服饰鞋包","美妆个护","母婴玩具","书籍卡碟","其它"]
-    }
+      titleTab:["精选","水果","食品","百货","母婴","女装","食品","美妆","其它"],
+      array:[
+        {
+        img:require('../assets/product.png'),
+        title:'测试加速度会尽快发的看法和健康的健康十分hsdgjfs',
+        price:12
+        },{
+          img:require('../assets/product.png'),
+          title:'测试加速度会尽快发的看法和健康的健康十分',
+          price:12
+        },{
+          img:require('../assets/product.png'),
+          title:'测试加速度会尽快发的看法和健康的健康十分',
+          price:12
+        },{
+          img:require('../assets/product.png'),
+          title:'测试',
+          price:12
+        },{
+          img:require('../assets/product.png'),
+          title:'测试',
+          price:12
+        } 
+      ]
+   }
+  },
+  components:{
+    productList,
+    topTab
   }
 }
 </script>
 
 <style>
-.tabs{
-  background-color: #fff;
-  margin-bottom:10px;
-  /* width:100%;
-  overflow-y: hidden;
-  overflow-x: scroll; */
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  
-}
-.tab_box{
-  
+.zw{
+  width:100%;
+  height: 80px;;
 }
 </style>

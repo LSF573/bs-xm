@@ -6,6 +6,10 @@ import my from '@/components/my'
 import login from '@/components/login'
 import limit from '@/components/limit'
 import free from '@/components/free'
+import order from '@/components/order'
+import issue from '@/components/issue'
+import detail from '@/components/detail'
+
 Vue.use(Router)
 
 export default new Router({
@@ -36,6 +40,18 @@ export default new Router({
       path: '/free',
       name: 'free',
       component: free 
+    },{
+        path: '/order',
+        name: 'order',
+        component: order 
+    },{
+      path: '/issue',
+      name: 'issue',
+      component: issue 
+    },{
+      path: '/detail',
+      name: 'detail',
+      component: detail 
     }
   ]
 })

@@ -11,6 +11,7 @@
       <div class='box' v-for="(item,index) in array" :key='index' item='item'>
         <img :src="item.img" alt="" class="pro_img">
         <p class="pro_title">{{item.title}}</p>
+        <p class="pro_price">￥{{item.price}}</p>
       </div>
     </div>
   </div>
@@ -24,19 +25,24 @@ export default {
       array:[
         {
         img:require('../../assets/product.png'),
-        title:'测试加速度会尽快发的看法和健康的健康十分'
+        title:'测试加速度会尽快发的看法和健康的健康十分',
+        price:10
         },{
           img:require('../../assets/product.png'),
-          title:'测试加速度会尽快发的看法和健康的健康十分'
+          title:'测试加速度会尽快发的看法和健康的健康十分',
+          price:100
         },{
           img:require('../../assets/product.png'),
-          title:'测试加速度会尽快发的看法和健康的健康十分'
+          title:'测试加速度会尽快发的看法和健康的健康十分',
+          price:90
         },{
           img:require('../../assets/product.png'),
-          title:'测试'
+          title:'测试',
+          price: 80
         },{
           img:require('../../assets/product.png'),
-          title:'测试'
+          title:'测试',
+          price:70
         } 
       ]
     }
@@ -74,8 +80,13 @@ export default {
 }
 .pro_title{
   width:120px;
+  font-size: 20px;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
+}
+.pro_price{
+  color:rgb(255, 0, 140);
+  font-size: 18px;
 }
 </style>
