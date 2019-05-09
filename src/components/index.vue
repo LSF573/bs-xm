@@ -11,49 +11,55 @@
         ---- 好货必抢 ----
         <p class="desc">精选宝贝，等你来抢</p>
       </div>
-      <productList :array='array'></productList>
-      <bottomTab :idx="0">		
-      </bottomTab>
+      <orderList :orderList='array'></orderList>
+      <bottomTab :idx="0"></bottomTab>
     </div>
 </template>
 
 <script>
 import bottomTab from '@/components/common/bottomTab'
 import productScroll from '@/components/index/productScroll'
-import productList from '@/components/index/productList'
+import orderList from '@/components/common/orderList'
 
 export default {
   components:{
     bottomTab,
     productScroll,
-    productList
+    orderList
   },
   data(){
     return{
       array:[
         {
-        img:require('../assets/product.png'),
+        img:require('../assets/T1.jpg'),
         title:'测试加速度会尽快发的看法和健康的健康十分hsdgjfs',
         price:12
         },{
-          img:require('../assets/product.png'),
+          img:require('../assets/T2.jpg'),
+          title:'测试加速度会尽快发的看法和健康的健康十分',
+          price:12
+        },{
+          img:require('../assets/T1.jpg'),
           title:'测试加速度会尽快发的看法和健康的健康十分',
           price:12
         },{
           img:require('../assets/product.png'),
+          title:'测试加速度会尽快发的看法和健康的健康十分s',
+          price:12
+        },{
+          img:require('../assets/product.png'),
           title:'测试加速度会尽快发的看法和健康的健康十分',
-          price:12
-        },{
-          img:require('../assets/product.png'),
-          title:'测试',
-          price:12
-        },{
-          img:require('../assets/product.png'),
-          title:'测试',
           price:12
         } 
-      ]
+      ],
+      datas:[]
     }
+  },
+  created(){
+    this.$Axios.get("https://elm.cangdu.org/v1/cities?type=group").then(datas => {
+      // console.log(datas.data)
+      this.datas = datas.data;
+    })
   }
 }
 </script>

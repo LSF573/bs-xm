@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import index from '@/components/index';
 import upload from '@/components/upload'
 import my from '@/components/my'
+import register from '@/components/register'
 import login from '@/components/login'
 import limit from '@/components/limit'
 import free from '@/components/free'
@@ -16,6 +17,16 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'register',
+      component: register 
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login 
+    },
+    {
+      path: '/index',
       name: 'index',
       component: index
     },
@@ -29,10 +40,6 @@ export default new Router({
       component: my
     },
     {
-      path: '/login',
-      name: 'login',
-      component: login 
-    },{
       path: '/limit',
       name: 'limit',
       component: limit 

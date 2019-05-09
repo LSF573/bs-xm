@@ -1,9 +1,9 @@
 <template>
   <div class="tabs">
     <template v-for="(item,index) in titleTab" item='item'>
-      <div class="tab_box">
+      <div class="tab_box" @click="tabClick(index)" >
         <p>{{item}}</p>
-        <div class="line" v-if="index==0"></div>
+        <div class="line" v-if="index==tabIndex"></div>
       </div>
     </template>
   </div>
@@ -11,20 +11,33 @@
 
 <script>
 export default {
-  props:['titleTab','page']
+  props:['titleTab','page'],
+  data(){
+    return{
+      tabIndex:'0',
+    }
+  },
+  
+  methods:{
+    tabClick(index){
+      this.tabIndex = index.toString();
+      console.log(index);
+      this.$emit('tabClick',this.tabIndex);
+    }
+  }
 }
 </script>
 
 <style>
 .tabs{
-  background-color:#F46C69;
+  background-color:#FF8080;
   margin-bottom:20px;
   width:100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
   overflow: auto;
-  padding-left: 32px;
+  /* padding-left: 32px; */
   position: fixed;
 }
 

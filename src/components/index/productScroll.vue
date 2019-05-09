@@ -8,7 +8,7 @@
       
     </div>
     <div class="pro_box">
-      <div class='box' v-for="(item,index) in array" :key='index' item='item'>
+      <div class='box' v-for="(item,index) in array" :key='index' item='item' @click='godetail()'>
         <img :src="item.img" alt="" class="pro_img">
         <p class="pro_title">{{item.title}}</p>
         <p class="pro_price">￥{{item.price}}</p>
@@ -24,27 +24,32 @@ export default {
     return{
       array:[
         {
-        img:require('../../assets/product.png'),
-        title:'测试加速度会尽快发的看法和健康的健康十分',
+        img:require('../../assets/T1.jpg'),
+        title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
         price:10
         },{
-          img:require('../../assets/product.png'),
-          title:'测试加速度会尽快发的看法和健康的健康十分',
+          img:require('../../assets/T2.jpg'),
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
           price:100
         },{
-          img:require('../../assets/product.png'),
-          title:'测试加速度会尽快发的看法和健康的健康十分',
+          img:require('../../assets/T1.jpg'),
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
           price:90
         },{
           img:require('../../assets/product.png'),
-          title:'测试',
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
           price: 80
         },{
           img:require('../../assets/product.png'),
-          title:'测试',
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
           price:70
         } 
       ]
+    }
+  },
+  methods:{
+    godetail(){
+      this.$router.push('/detail');
     }
   }
 }

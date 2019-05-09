@@ -1,13 +1,15 @@
 <template>
-  <div class="component">
-    <div v-for='(item,index) in orderList' :key='index' item='item' class="lsf_box">
-      <img :src="item.img" alt="" class="pro_img">
-      <div class="lsf_bottom">
-        <p class="item_title">{{item.title}}</p>
-        <!-- <p class="item_price">￥{{item.price}}  &nbsp;&nbsp;<span class="span">{{item.state==1?'待下单':(item.state==2?'进行中':(item.state==3?'已完成':''))}}</span></p> -->
-         <p class="item_price">￥{{item.price}}  &nbsp;&nbsp;<span class="span">已完成</span></p>
+  <div class="orderList">
+    <div class="component">
+      <div v-for='(item,index) in orderList' :key='index' item='item' class="lsf_box" @click='godetail()'>
+        <img :src="item.img" alt="" class="pro_img">
+        <div class="lsf_bottom">
+          <p class="item_title">{{item.title}}</p>
+          <p class="item_price">￥{{item.price}}</p>
+        </div>
       </div>
     </div>
+    <div class="no_more">我也是有底线的~</div>
   </div>
 </template>
 
@@ -17,6 +19,11 @@ export default {
   data(){
     return{
     
+    }
+  },
+  methods:{
+    godetail(){
+      this.$router.push('/detail');
     }
   }
 }
@@ -32,8 +39,11 @@ export default {
   width:180px;
   height:140px;
 }
+.orderList{
+   padding: 0 16px 100px;
+}
 .component {
-  padding: 0 16px;
+  /* padding: 0 16px 100px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -58,5 +68,10 @@ export default {
 }
 .span{
   float: right;
+}
+.no_more {
+  color:gray;
+  text-align: center;
+  font-size: 18px;
 }
 </style>

@@ -17,7 +17,7 @@
 				items:[{
 					cls: 'home',
 					name: '首页',
-					push: '/',
+					push: '/index',
 					icon: require('../../assets/index.png'),
 					iconSelect: require('../../assets/index_selected.png')
         },{

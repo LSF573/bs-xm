@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header title="闲置护送">
-      <router-link to="/" slot="left">
+      <router-link to="/index" slot="left">
         <mt-button icon="back"></mt-button>
       </router-link>
       <mt-button icon="more" slot="right"></mt-button>
@@ -18,12 +18,12 @@ import topTab from '@/components/index/topTab'
 export default {
   data(){
     return{
-      titleTab:["全部","休闲美食","居家百货","百货","母婴","女装","食品","美妆","其它"],
+      titleTab:["全部","服装","食品","美妆","百货","其它"],
       array:[
         {
-        img:require('../assets/product.png'),
-        title:'测试加速度会尽快发的看法和健康的健康十分hsdgjfs',
-        price:12
+          img:require('../assets/product.png'),
+          title:'测试加速度会尽快发的看法和健康的健康十分hsdgjfs',
+          price:12
         },{
           img:require('../assets/product.png'),
           title:'测试加速度会尽快发的看法和健康的健康十分',

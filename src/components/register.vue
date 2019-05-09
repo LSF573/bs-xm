@@ -1,16 +1,16 @@
 <template>
   <div class="pad">
-    <mt-header title="登录">
-      <router-link to="/" slot="left">
+    <mt-header title="注册">
+      <!-- <router-link to="/" slot="left">
         <mt-button icon="back"></mt-button>
-      </router-link>
+      </router-link> -->
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
     <div class="input_box">
       <p><el-input v-model="userName" clearable placeholder="用户名（手机号或邮箱）" style='font-size:18px;'></el-input></p> 
       <p><el-input v-model="password" type='password' clearable placeholder="密码" style='font-size:18px;'></el-input></p>
     </div>
-    <button class="btnlogin" @click="goLogin()">登录</button>
+    <button class="btnlogin" @click="goLogin()">注册</button>
     <!-- <p class="hint">提示：新用户系统将自动注册</p> -->
   </div>
 </template>
@@ -20,21 +20,15 @@ export default {
   data(){
     return{
       userName:'',
-      password:'',
-      data:''
+      password:''
     }
   },
   methods:{
     goLogin() {
-      // console.log(this.userName);
-      this.$Axios.post(`http://127.0.0.1/trade/User/loginCheck?username=${this.username}&password=${this.password}`).then((res)=>{
-        console.log('goLogin',res);
-        // this.data = 
+      console.log(this.userName);
+      this.$router.push({
+        path:'/login'
       })
-      // http://127.0.0.1/trade/User/loginCheck?username=&password
-      // this.$router.push({
-      //   path:'/index'
-      // })
     }
   }
 }

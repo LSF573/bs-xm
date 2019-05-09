@@ -33,5 +33,6 @@ export default {
   top:0;
   width:100%;
   border-bottom:1px solid #DCDCD4;
+  z-index: 1000;
 }
 </style>

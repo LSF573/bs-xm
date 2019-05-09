@@ -6,59 +6,58 @@
       </router-link>
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
-    <topTab :titleTab="titleTab"></topTab>
+    <topTab :titleTab="titleTab" @tabClick='tabClick'></topTab>
     <div class="zw"></div>
-    <orderList :orderList='orderList'></orderList>
-    <!-- <div class="mytab">
-      <template v-for="(item,index) in tabArray">
-        <div class="">
-          <p>{{item}}</p>
-        </div>
-      </template>
-    </div> -->
+    <productList :array='orderList' :visible='true'></productList>
   </div>
 </template>
 
 <script>
 import topTab from '@/components/index/topTab'
-import orderList from '@/components/common/orderList'
+import productList from '@/components/index/productList'
 export default {
   data(){
     return{
-      titleTab:['全部','待下单','进行中','已完成'],
+      titleTab:['全部','未发货','已发货','已完成'],
       orderList:[
         {
-          img:require('../assets/product.png'),
-          title:'测试加速度会尽快发的看法和健康的健康十分hsdgjfs',
+          img:require('../assets/T1.jpg'),
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
           price:12,
-          state:1 // 1待下单 2进行中 3已完成
+          state:1 // 0全部 1已送出 2未送出
+        },{
+          img:require('../assets/T2.jpg'),
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
+          price:12,
+          state:1 
+        },{
+          img:require('../assets/T3.jpg'),
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
+          price:12,
+          state:3
         },{
           img:require('../assets/product.png'),
-          title:'测试加速度会尽快发的看法和健康的健康十分',
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
           price:12,
-          state:1 //0全部 1待下单 2进行中 3已完成
+          state:2 
         },{
           img:require('../assets/product.png'),
-          title:'测试加速度会尽快发的看法和健康的健康十分',
+          title:'唐狮短袖t恤女2019夏季新款网红韩版纯棉半袖百搭ins风T恤潮学生',
           price:12,
-          state:0 //0全部 1待下单 2进行中 3已完成
-        },{
-          img:require('../assets/product.png'),
-          title:'测试',
-          price:12,
-          state:2 //0全部 1待下单 2进行中 3已完成
-        },{
-          img:require('../assets/product.png'),
-          title:'测试',
-          price:12,
-          state:3 //0全部 1待下单 2进行中 3已完成
+          state:1 
         } 
       ],
     }
   },
   components:{
     topTab,
-    orderList
+    productList
+  },
+  methods:{
+    // tab切换
+    tabClick(index){
+      alert(index);
+    }
   }
 }
 </script>

@@ -11,7 +11,7 @@
           <p class="title">换一种心情，换一种生活</p>
         </div>
         <router-link to="/login">
-          <button class="gologin">去登录</button>
+          <button class="gologin">退出登录</button>
         </router-link>
       </div>
     </div>
@@ -26,11 +26,11 @@
         <div class="state">
           <div>
             <img src=".././assets/待下单.png" alt="">
-            <p class="wite">待下单</p>
+            <p class="wite">待发货</p>
           </div>
           <div>
             <img src=".././assets/进行中.png" alt="">
-            <p class="wite">进行中</p>
+            <p class="wite">已发货</p>
           </div>
           <div>
             <img src=".././assets/已完成.png" alt="">
@@ -53,7 +53,7 @@
           </div>
           <div>
             <img src=".././assets/进行中.png" alt="">
-            <p class="wite">待收货</p>
+            <p class="wite">已发货</p>
           </div>
           <div>
             <img src=".././assets/已完成.png" alt="">
